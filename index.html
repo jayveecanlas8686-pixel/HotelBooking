@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StayEase - Hotel & Resort Booking Platform</title>
+  <meta name="description" content="Find and book the best hotels and resorts in the Philippines and beyond. Free cancellation, best price guaranteed.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .cta-section { background: linear-gradient(135deg, var(--secondary) 0%, #ff8c56 100%); padding: 4rem 0; text-align: center; color: var(--white); }
+    .cta-section h2 { margin-bottom: 0.75rem; }
+    .cta-section p { font-size: 1.1rem; opacity: 0.92; margin-bottom: 1.75rem; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .how-it-works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+    .hiw-card { text-align: center; padding: 2rem 1rem; }
+    .hiw-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .hiw-num { display: inline-block; width: 32px; height: 32px; border-radius: 50%; background: var(--primary-light); color: var(--white); font-size: 0.875rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; }
+    .hiw-card h3 { margin-bottom: 0.4rem; }
+    .hiw-card p { font-size: 0.875rem; color: var(--text-light); }
+    .section-alt { background: var(--white); }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Find Your Perfect<br>Hotel or Resort</h1>
+      <p>Discover extraordinary stays at the best prices. From beach resorts to mountain retreats, your dream getaway is just a search away.</p>
+      <div class="hero-trust">
+        <div class="trust-badge">✅ Best Price Guarantee</div>
+        <div class="trust-badge">🔒 Secure Booking</div>
+        <div class="trust-badge">📞 24/7 Support</div>
+      </div>
+    </div>
+    <!-- Search Box -->
+    <div class="search-box">
+      <div class="search-box-tabs">
+        <button class="search-tab active">🏨 Hotels</button>
+        <button class="search-tab">🏖️ Resorts</button>
+        <button class="search-tab">🏡 Villas</button>
+      </div>
+      <form id="hero-search-form" onsubmit="return false;">
+        <div class="search-fields">
+          <div class="search-field">
+            <label>Destination</label>
+            <span class="field-icon">📍</span>
+            <input type="text" name="city" id="hero-destination" placeholder="City, country, or hotel name" autocomplete="off">
+          </div>
+          <div class="search-field">
+            <label>Check-in</label>
+            <span class="field-icon">📅</span>
+            <input type="date" name="checkIn" id="hero-checkin">
+          </div>
+          <div class="search-field">
+            <label>Check-out</label>
+            <span class="field-icon">📅</span>
+            <input type="date" name="checkOut" id="hero-checkout">
+          </div>
+          <div class="search-field">
+            <label>Guests</label>
+            <span class="field-icon">👥</span>
+            <select name="adults">
+              <option value="1">1 Adult</option>
+              <option value="2" selected>2 Adults</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults</option>
+              <option value="5">5+ Adults</option>
+            </select>
+          </div>
+          <div class="search-btn-wrap">
+            <button type="submit" class="btn btn-secondary btn-lg" id="hero-search-btn">🔍 Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">8+</div><div class="lbl">Properties</div></div>
+      <div class="hero-stat"><div class="num">1,200+</div><div class="lbl">Happy Guests</div></div>
+      <div class="hero-stat"><div class="num">4.8★</div><div class="lbl">Avg. Rating</div></div>
+      <div class="hero-stat"><div class="num">24/7</div><div class="lbl">Support</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED HOTELS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Hotels & Resorts</h2>
+      <p>Handpicked properties for an exceptional experience</p>
+    </div>
+    <div class="featured-grid" id="featured-grid"></div>
+    <div class="view-all-wrap">
+      <a href="hotels.html" class="btn btn-outline">View All Properties →</a>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR DESTINATIONS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Popular Destinations</h2>
+      <p>Explore the Philippines' most beloved travel spots</p>
+    </div>
+    <div class="destinations-grid" id="destinations-grid"></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>How It Works</h2>
+      <p>Book your perfect stay in three simple steps</p>
+    </div>
+    <div class="how-it-works-grid">
+      <div class="hiw-card">
+        <div class="hiw-icon">🔍</div>
+        <div class="hiw-num">1</div>
+        <h3>Search</h3>
+        <p>Enter your destination, dates, and number of guests to find available properties.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-icon">🏨</div>
+        <div class="hiw-num">2</div>
+        <h3>Choose</h3>
+        <p>Compare hotels, read reviews, view photos, and select the perfect room for your trip.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-icon">💳</div>
+        <div class="hiw-num">3</div>
+        <h3>Book</h3>
+        <p>Complete your secure booking in minutes and receive instant confirmation by email.</p>
+      </div>
+      <div class="hiw-card">
+        <div class="hiw-icon">✈️</div>
+        <div class="hiw-num">4</div>
+        <h3>Enjoy</h3>
+        <p>Pack your bags and check in! Manage your booking anytime from your account.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIAL OFFERS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Special Offers</h2>
+      <p>Limited-time deals you don't want to miss</p>
+    </div>
+    <div class="offers-grid" id="offers-grid"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What Our Guests Say</h2>
+      <p>Real experiences from real travellers</p>
+    </div>
+    <div class="testimonials-grid" id="testimonials-grid"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>List Your Hotel on StayEase</h2>
+    <p>Join hundreds of hotel owners reaching thousands of guests. Start listing for free today.</p>
+    <div class="cta-btns">
+      <a href="register.html" class="btn btn-outline-white btn-lg">Get Started Free</a>
+      <a href="pricing.html" class="btn btn-lg" style="background:var(--white);color:var(--secondary);">View Pricing Plans</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<button class="reset-demo-btn" onclick="resetDemoData()">🔄 Reset Demo Data</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/hotels.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/reviews.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initPage();
+    initSearchForm('hero-search-form');
+
+    // Featured hotels
+    const user = DB.get(DB.KEYS.CURRENT_USER);
+    const wishlistIds = getWishlistIds(user?.id);
+    const featured = Hotels.getFeatured().slice(0, 3);
+    document.getElementById('featured-grid').innerHTML = featured.map(h => renderHotelCard(h, wishlistIds)).join('');
+
+    // Destinations
+    const destinations = [
+      { name: 'Boracay', count: '3 properties', img: 'https://picsum.photos/seed/boracay/400/300', city: 'Boracay' },
+      { name: 'Palawan', count: '2 properties', img: 'https://picsum.photos/seed/palawan/400/300', city: 'Palawan' },
+      { name: 'Cebu', count: '2 properties', img: 'https://picsum.photos/seed/cebu/400/300', city: 'Cebu' },
+      { name: 'Manila', count: '2 properties', img: 'https://picsum.photos/seed/manila/400/300', city: 'Manila' },
+      { name: 'Tagaytay', count: '1 property', img: 'https://picsum.photos/seed/tagaytay/400/300', city: 'Tagaytay' },
+      { name: 'Siargao', count: '1 property', img: 'https://picsum.photos/seed/siargao/400/300', city: 'Siargao' }
+    ];
+    document.getElementById('destinations-grid').innerHTML = destinations.map(d => `
+      <a href="search-results.html?city=${d.city}" class="destination-card">
+        <img src="${d.img}" alt="${d.name}" loading="lazy">
+        <div class="destination-card-overlay">
+          <h3>${d.name}</h3>
+          <span>${d.count}</span>
+        </div>
+      </a>`).join('');
+
+    // Special offers
+    const allHotels = Hotels.getApproved();
+    const offers = [
+      { hotel: allHotels[0], discount: 17, label: 'Early Bird' },
+      { hotel: allHotels[1], discount: 15, label: 'Flash Sale' },
+      { hotel: allHotels[4], discount: 10, label: 'Weekend Deal' }
+    ].filter(o => o.hotel);
+    document.getElementById('offers-grid').innerHTML = offers.map(({ hotel, discount, label }) => `
+      <div class="offer-card">
+        <div class="offer-card-img"><img src="${hotel.images[0]}" alt="${hotel.name}" loading="lazy"></div>
+        <span class="offer-discount">-${discount}% ${label}</span>
+        <div class="offer-card-body">
+          <div class="offer-card-name">${hotel.name}</div>
+          <div class="offer-card-loc">📍 ${hotel.location}</div>
+          <div class="offer-card-price">
+            <span class="offer-orig">${formatCurrency(hotel.priceFrom * (1 + discount/100))}</span>
+            <span class="offer-new">${formatCurrency(hotel.priceFrom)}</span>
+            <span style="font-size:0.78rem;color:var(--text-muted)">/night</span>
+          </div>
+          <a href="hotel-details.html?id=${hotel.id}" class="btn btn-primary btn-sm" style="margin-top:0.75rem;width:100%">Book Now</a>
+        </div>
+      </div>`).join('');
+
+    // Testimonials
+    const testimonials = [
+      { name: 'Sarah M.', date: 'May 2025', rating: 5, text: 'Grand Laguna Resort was absolutely breathtaking! The staff was exceptional and the ocean views from our balcony were stunning. Will definitely return!', hotel: 'Grand Laguna Resort' },
+      { name: 'David K.', date: 'April 2025', rating: 5, text: 'Azure Paradise Hotel in Palawan was the most unique accommodation I\'ve ever experienced. The Cliffside Villa with a private plunge pool was a dream.', hotel: 'Azure Paradise Hotel' },
+      { name: 'Cynthia L.', date: 'March 2025', rating: 4, text: 'Royal Summit Hotel had the most incredible views of Taal Volcano. The Highland Suite with a fireplace made our anniversary weekend absolutely perfect.', hotel: 'Royal Summit Hotel' }
+    ];
+    document.getElementById('testimonials-grid').innerHTML = testimonials.map(t => `
+      <div class="testimonial-card">
+        <div class="testimonial-rating">${'★'.repeat(t.rating)}</div>
+        <p class="testimonial-text">"${t.text}"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">${t.name.charAt(0)}</div>
+          <div>
+            <div class="testimonial-name">${t.name}</div>
+            <div class="testimonial-date">${t.date} · ${t.hotel}</div>
+          </div>
+        </div>
+      </div>`).join('');
+
+    // Tab switcher (visual only)
+    document.querySelectorAll('.search-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.search-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+  });
+</script>
+</body>
+</html>

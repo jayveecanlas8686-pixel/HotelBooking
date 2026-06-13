@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Dashboard - StayEase</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<div class="page-header">
+  <div class="container">
+    <h1>🏨 Owner Dashboard</h1>
+    <p id="owner-greeting">Welcome back!</p>
+  </div>
+</div>
+<section class="section" style="padding-top:2rem;">
+  <div class="container">
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-icon">🏨</div><div class="stat-value" id="stat-hotels">0</div><div class="stat-label">My Hotels</div></div>
+      <div class="stat-card"><div class="stat-icon">📋</div><div class="stat-value" id="stat-bookings">0</div><div class="stat-label">Total Bookings</div></div>
+      <div class="stat-card"><div class="stat-icon">💰</div><div class="stat-value" id="stat-revenue">$0</div><div class="stat-label">Total Revenue</div></div>
+      <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value" id="stat-reviews">0</div><div class="stat-label">Reviews</div></div>
+      <div class="stat-card"><div class="stat-icon">⏳</div><div class="stat-value" id="stat-pending">0</div><div class="stat-label">Active Bookings</div></div>
+      <div class="stat-card"><div class="stat-icon">🌟</div><div class="stat-value" id="stat-rating">0</div><div class="stat-label">Avg. Rating</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+      <!-- Revenue Chart -->
+      <div class="chart-card">
+        <h3>📊 Monthly Revenue</h3>
+        <div id="revenue-chart"></div>
+      </div>
+      <!-- Quick Links -->
+      <div class="card">
+        <div class="card-header"><h3 style="color:var(--text);font-size:1rem;">Quick Actions</h3></div>
+        <div class="card-body" style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+          <a href="manage-rooms.html" class="btn btn-primary">🛏️ Manage Rooms</a>
+          <a href="manage-bookings.html" class="btn btn-outline">📋 All Bookings</a>
+          <a href="hotels.html" class="btn btn-outline">🏨 View Listings</a>
+          <button class="btn btn-outline" onclick="resetDemoData()">🔄 Reset Demo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- My Hotels -->
+    <div class="card" style="margin-bottom:1.5rem;">
+      <div class="card-header">
+        <h3 style="color:var(--text);font-size:1rem;">My Properties</h3>
+        <a href="manage-rooms.html" class="btn btn-primary btn-sm">+ Manage Rooms</a>
+      </div>
+      <div id="owner-hotels-list" style="padding:0 0.5rem;"></div>
+    </div>
+
+    <!-- Recent Bookings -->
+    <div class="card">
+      <div class="card-header">
+        <h3 style="color:var(--text);font-size:1rem;">Recent Bookings</h3>
+        <a href="manage-bookings.html" class="btn btn-outline btn-sm">View All</a>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Booking ID</th><th>Guest</th><th>Hotel / Room</th><th>Dates</th><th>Amount</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="recent-bookings-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="footer-placeholder"></div>
+<button class="reset-demo-btn" onclick="resetDemoData()">🔄 Reset Demo</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/hotels.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/reviews.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initPage();
+    initOwnerDashboard();
+  });
+</script>
+</body>
+</html>

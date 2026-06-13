@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Details - StayEase</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div style="background:var(--bg);padding:0.75rem 0;border-bottom:1px solid var(--border);">
+  <div class="container">
+    <nav style="font-size:0.82rem;color:var(--text-muted);">
+      <a href="index.html">Home</a> › <a href="hotels.html">Hotels</a> › <span id="breadcrumb-name">Hotel Details</span>
+    </nav>
+  </div>
+</div>
+
+<section class="section" style="padding-top:2rem;">
+  <div class="container">
+    <div id="hotel-detail-content">
+      <div class="hotel-detail-wrap">
+        <!-- Gallery -->
+        <div class="hotel-detail-main">
+          <div id="hotel-gallery"></div>
+          <div id="hotel-info"></div>
+          <div id="rooms-section" class="section" style="padding:2rem 0 1rem;border-top:2px solid var(--border);margin-top:2rem;">
+            <div style="text-align:center;padding:2rem;color:var(--text-muted);">Loading rooms...</div>
+          </div>
+          <div id="hotel-reviews" class="section" style="padding:2rem 0 1rem;border-top:2px solid var(--border);"></div>
+          <div id="related-hotels" style="margin-top:2rem;padding-top:2rem;border-top:2px solid var(--border);"></div>
+        </div>
+        <!-- Aside (sticky quick-book) -->
+        <div class="hotel-detail-aside">
+          <div id="quick-book-card" class="card" style="padding:1.5rem;">
+            <h3 style="margin-bottom:1rem;font-size:1rem;">Quick Availability Check</h3>
+            <div class="form-group">
+              <label>Check-in</label>
+              <input type="date" id="detail-checkin" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Check-out</label>
+              <input type="date" id="detail-checkout" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Adults</label>
+              <select id="detail-adults" class="form-control">
+                <option value="1">1 Adult</option>
+                <option value="2" selected>2 Adults</option>
+                <option value="3">3 Adults</option>
+                <option value="4">4 Adults</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" style="width:100%;" onclick="refreshRoomAvailability()">Check Availability</button>
+            <a href="#rooms-section" class="btn btn-outline" style="width:100%;margin-top:0.5rem;">See All Rooms ↓</a>
+            <div style="margin-top:1rem;font-size:0.78rem;color:var(--text-muted);text-align:center;">
+              ✅ Free cancellation available<br>💳 Secure payment guaranteed
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<button class="reset-demo-btn" onclick="resetDemoData()">🔄 Reset Demo</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/hotels.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/reviews.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initHotelDetailsPage();
+    const hotelId = getUrlParam('id');
+    const hotel = Hotels.getById(hotelId);
+    if (hotel) {
+      document.title = hotel.name + ' - StayEase';
+      document.getElementById('breadcrumb-name').textContent = hotel.name;
+    }
+  });
+</script>
+</body>
+</html>

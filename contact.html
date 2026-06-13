@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - StayEase</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<div class="page-header">
+  <div class="container">
+    <h1>📞 Contact Us</h1>
+    <p>We're here to help. Reach out to us for any questions or support.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+      <!-- Contact Info -->
+      <div class="contact-info-card">
+        <h3>Get in Touch</h3>
+        <div class="contact-info-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <h4>Phone</h4>
+            <p>+1 (800) STAYEASE<br>Mon–Fri 9AM–6PM PST</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-icon">✉️</span>
+          <div>
+            <h4>Email</h4>
+            <p>help@stayease.com<br>We reply within 24 hours</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <h4>Head Office</h4>
+            <p>123 Travel Street<br>Makati City, Metro Manila<br>Philippines 1226</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-icon">💬</span>
+          <div>
+            <h4>Live Chat</h4>
+            <p>Available 24/7 for urgent booking support</p>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <h4 style="margin-bottom:0.75rem;font-size:0.875rem;opacity:0.8;">Follow Us</h4>
+          <div style="display:flex;gap:0.5rem;">
+            <a href="#" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1rem;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">📘</a>
+            <a href="#" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1rem;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">📸</a>
+            <a href="#" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:var(--white);font-size:1rem;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">🐦</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-card">
+        <h3 style="margin-bottom:0.3rem;">Send Us a Message</h3>
+        <p style="color:var(--text-light);font-size:0.875rem;margin-bottom:1.5rem;">Fill in the form below and we'll get back to you shortly.</p>
+        <div id="contact-success" style="display:none;" class="alert alert-success">
+          ✅ Thank you! Your message has been sent. We'll reply within 24 hours.
+        </div>
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Your Name *</label>
+              <input type="text" id="c-name" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email Address *</label>
+              <input type="email" id="c-email" class="form-control" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-phone">Phone Number</label>
+              <input type="tel" id="c-phone" class="form-control" placeholder="+1 555-0100">
+            </div>
+            <div class="form-group">
+              <label for="c-type">Inquiry Type *</label>
+              <select id="c-type" class="form-control" required>
+                <option value="">Select inquiry type...</option>
+                <option value="booking">Booking Support</option>
+                <option value="cancellation">Cancellation Request</option>
+                <option value="owner">List My Hotel</option>
+                <option value="partnership">Partnership Inquiry</option>
+                <option value="technical">Technical Issue</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-subject">Subject *</label>
+            <input type="text" id="c-subject" class="form-control" placeholder="Brief subject of your inquiry" required>
+          </div>
+          <div class="form-group">
+            <label for="c-message">Message *</label>
+            <textarea id="c-message" class="form-control" rows="5" placeholder="Describe your inquiry in detail..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" required style="width:16px;height:16px;accent-color:var(--primary-light);">
+              <span>I agree to the <a href="#">Privacy Policy</a> and consent to being contacted.</span>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Map placeholder -->
+    <div style="margin-top:3rem;">
+      <h3 style="margin-bottom:1rem;">📍 Find Us</h3>
+      <div class="map-placeholder" style="height:300px;">
+        <div class="map-pin">📍</div>
+        <div class="map-label">StayEase Head Office</div>
+        <div class="map-sublabel">123 Travel Street, Makati City, Philippines 1226</div>
+        <div class="map-note">Google Maps integration available in production version</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/hotels.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/reviews.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentUser = initPage();
+
+    // Pre-fill if logged in
+    if (currentUser) {
+      document.getElementById('c-name').value = currentUser.name || '';
+      document.getElementById('c-email').value = currentUser.email || '';
+      document.getElementById('c-phone').value = currentUser.phone || '';
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const inquiry = {
+        id: generateId(),
+        name: document.getElementById('c-name').value.trim(),
+        email: document.getElementById('c-email').value.trim(),
+        phone: document.getElementById('c-phone').value.trim(),
+        type: document.getElementById('c-type').value,
+        subject: document.getElementById('c-subject').value.trim(),
+        message: document.getElementById('c-message').value.trim(),
+        userId: currentUser?.id || null,
+        createdAt: todayStr(),
+        status: 'open'
+      };
+
+      const inquiries = DB.getAll(DB.KEYS.INQUIRIES);
+      inquiries.push(inquiry);
+      DB.set(DB.KEYS.INQUIRIES, inquiries);
+
+      document.getElementById('contact-success').style.display = 'block';
+      this.reset();
+      this.style.display = 'none';
+      showToast('Message sent successfully!', 'success');
+      window.scrollTo({ top: document.getElementById('contact-success').offsetTop - 100, behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>

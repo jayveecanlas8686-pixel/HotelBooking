@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results - StayEase</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- Search Bar -->
+<div style="background:var(--primary);padding:1.25rem 0;">
+  <div class="container">
+    <div class="search-bar-inline">
+      <input type="text" id="search-destination" class="form-control" placeholder="🔍 City, hotel, or destination..." style="max-width:320px;">
+      <input type="date" id="sr-checkin" class="form-control" style="max-width:160px;">
+      <input type="date" id="sr-checkout" class="form-control" style="max-width:160px;">
+      <button id="search-btn" class="btn btn-secondary">Search</button>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="search-results-layout">
+      <!-- Filters Sidebar -->
+      <aside class="filters-sidebar">
+        <h3>Filters <button id="clear-filters" class="btn btn-outline btn-xs">Clear All</button></h3>
+        <div class="filter-section">
+          <h4>Property Type</h4>
+          <select id="filter-category" class="form-control filter-input">
+            <option value="all">All Types</option>
+            <option value="hotel">Hotel</option>
+            <option value="resort">Resort</option>
+            <option value="boutique">Boutique</option>
+          </select>
+        </div>
+        <div class="filter-section">
+          <h4>Price per Night</h4>
+          <div class="price-range-row">
+            <span style="font-size:0.8rem;">$</span>
+            <input type="number" id="filter-min-price" class="form-control filter-input" placeholder="Min" min="0">
+            <span style="font-size:0.8rem;">–</span>
+            <input type="number" id="filter-max-price" class="form-control filter-input" placeholder="Max" min="0">
+          </div>
+        </div>
+        <div class="filter-section">
+          <h4>Star Rating</h4>
+          <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" class="filter-stars filter-input" value="5"> ★★★★★ 5 Stars</label>
+            <label class="checkbox-label"><input type="checkbox" class="filter-stars filter-input" value="4"> ★★★★☆ 4 Stars</label>
+            <label class="checkbox-label"><input type="checkbox" class="filter-stars filter-input" value="3"> ★★★☆☆ 3 Stars</label>
+          </div>
+        </div>
+        <div class="filter-section">
+          <h4>Amenities</h4>
+          <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" class="filter-amenity filter-input" value="pool"> 🏊 Swimming Pool</label>
+            <label class="checkbox-label"><input type="checkbox" class="filter-amenity filter-input" value="beach"> 🏖️ Private Beach</label>
+            <label class="checkbox-label"><input type="checkbox" class="filter-amenity filter-input" value="spa"> 💆 Spa</label>
+            <label class="checkbox-label"><input type="checkbox" class="filter-amenity filter-input" value="gym"> 🏋️ Gym</label>
+            <label class="checkbox-label"><input type="checkbox" class="filter-amenity filter-input" value="restaurant"> 🍽️ Restaurant</label>
+            <label class="checkbox-label"><input type="checkbox" class="filter-amenity filter-input" value="wifi"> 📶 Free WiFi</label>
+            <label class="checkbox-label"><input type="checkbox" class="filter-amenity filter-input" value="parking"> 🚗 Free Parking</label>
+            <label class="checkbox-label"><input type="checkbox" class="filter-amenity filter-input" value="airport-shuttle"> 🚌 Airport Shuttle</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Results -->
+      <div class="results-main">
+        <div class="results-header">
+          <span id="results-count" class="results-count"></span>
+          <div class="sort-wrapper">
+            <label>Sort by:</label>
+            <select id="sort-select" class="form-control">
+              <option value="popular">Most Popular</option>
+              <option value="rating">Top Rated</option>
+              <option value="price-asc">Price: Low → High</option>
+              <option value="price-desc">Price: High → Low</option>
+              <option value="reviews">Most Reviewed</option>
+              <option value="newest">Newest</option>
+            </select>
+          </div>
+        </div>
+        <div id="results-container" class="hotels-grid"></div>
+        <div id="pagination-container"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<button class="reset-demo-btn" onclick="resetDemoData()">🔄 Reset Demo</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/hotels.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/reviews.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', initSearchResultsPage);
+</script>
+</body>
+</html>

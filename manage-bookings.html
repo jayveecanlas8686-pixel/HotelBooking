@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Bookings - StayEase</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+<div class="page-header">
+  <div class="container">
+    <h1 id="manage-hotel-title">📋 Manage Bookings</h1>
+    <p>View, update, and track all reservations</p>
+  </div>
+</div>
+<section class="section" style="padding-top:2rem;">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.25rem;">
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <button class="mb-filter-btn btn btn-outline btn-sm active" data-status="all">All</button>
+        <button class="mb-filter-btn btn btn-outline btn-sm" data-status="pending">Pending</button>
+        <button class="mb-filter-btn btn btn-outline btn-sm" data-status="confirmed">Confirmed</button>
+        <button class="mb-filter-btn btn btn-outline btn-sm" data-status="checked-in">Checked In</button>
+        <button class="mb-filter-btn btn btn-outline btn-sm" data-status="completed">Completed</button>
+        <button class="mb-filter-btn btn btn-outline btn-sm" data-status="cancelled">Cancelled</button>
+      </div>
+      <input type="text" id="bookings-search" class="form-control" placeholder="🔍 Search by reference or guest name" style="max-width:280px;">
+    </div>
+    <div class="card">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Booking ID</th><th>Guest</th><th>Hotel / Room</th>
+              <th>Dates</th><th>Guests</th><th>Amount</th><th>Status</th><th>Update Status</th>
+            </tr>
+          </thead>
+          <tbody id="manage-bookings-table">
+            <tr><td colspan="8" class="text-center" style="padding:2rem;color:var(--text-muted);">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:1rem;">
+      <a href="owner-dashboard.html" class="btn btn-outline btn-sm">← Back to Dashboard</a>
+    </div>
+  </div>
+</section>
+<div id="footer-placeholder"></div>
+<button class="reset-demo-btn" onclick="resetDemoData()">🔄 Reset Demo</button>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/hotels.js"></script>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/reviews.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initPage();
+    initManageBookingsPage();
+  });
+</script>
+</body>
+</html>
